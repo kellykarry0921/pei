@@ -30,7 +30,7 @@ def welcome():
 
 @app.route("/about")
 def about():
-    return render_template("aboutme.html","landscape.jpg"，"me.jpg")
+    return render_template("aboutme.html")
 
 @app.route("/account", methods=["GET", "POST"])
 def account():
