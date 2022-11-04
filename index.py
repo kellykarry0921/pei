@@ -16,7 +16,7 @@ def index():
     homepage += "<a href=/welcome?nick=kelly>傳送使用者暱稱</a><br>"
     homepage += "<a href=/account>網頁表單輸入實例</a><br><br>"
     homepage += "<a href=/about>姵柔簡介網頁</a><br>"
-    homepage += "<br><a href=/read>讀取Firestore資料</a><br>"
+    homepage += "<br><a href=/read>查詢選修課程</a><br>"
     return homepage
 
 @app.route("/mis")
@@ -50,11 +50,13 @@ def account():
 
 @app.route("/read")
 def read():
-    Result = ""     
-    collection_ref = db.collection("靜宜資管")    
-    docs = collection_ref.order_by("mail", direction=firestore.Query.DESCENDING).get()    
-    for doc in docs:         
-        Result += "文件內容：{}".format(doc.to_dict()) + "<br>"    
+    cond = input("請輸入你要查詢的課程關鍵字:")
+    collection_ref = db.collection("1111")
+docs = collection_ref.get()
+for doc in docs:
+    dict = doc.to_dict()
+    if cond in dict["Course"]:
+        print("選修課程內容：{}".format(doc.to_dict()))   
     return Result
 
 
