@@ -48,10 +48,9 @@ def account():
     else:
         return render_template("account.html")
 
-@app.route("/read")
-def read():
-        result = "選修課程內容"
-    return Result
+#@app.route("/read")
+#ef read():
+ #   return Result
 
 
 
