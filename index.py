@@ -48,9 +48,7 @@ def account():
     else:
         return render_template("account.html")
 
-#@app.route("/read")
-#ef read():
- #   return Result
+
 
 
 
