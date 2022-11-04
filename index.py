@@ -50,13 +50,7 @@ def account():
 
 @app.route("/read")
 def read():
-    cond = input("請輸入你要查詢的課程關鍵字:")
-    collection_ref = db.collection("1111")
-docs = collection_ref.get()
-for doc in docs:
-    dict = doc.to_dict()
-    if cond in dict["Course"]:
-        print("選修課程內容：{}".format(doc.to_dict()))   
+        result = "選修課程內容"
     return Result
 
 
