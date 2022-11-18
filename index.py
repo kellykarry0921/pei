@@ -21,7 +21,7 @@ def index():
     homepage += "<a href=/account>網頁表單輸入實例</a><br><br>"
     homepage += "<a href=/about>姵柔簡介網頁</a><br>"
     homepage += "<br><a href=/read>讀取Firestore資料</a><br>"
-    homepage += "<br><a href=/movie>讀取開眼電影即將上映影片，寫入Firestore</a><br>"
+    homepage += "<br><a href=/movie1>讀取開眼電影即將上映影片，寫入Firestore</a><br>"
     return homepage
 
 @app.route("/mis")
@@ -62,7 +62,7 @@ def read():
         Result += "文件內容：{}".format(doc.to_dict()) + "<br>"    
     return Result
 
-@app.route("/movie")
+@app.route("/movie1")
 def movie():
     url = "http://www.atmovies.com.tw/movie/next/"
     Data = requests.get(url)
