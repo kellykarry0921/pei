@@ -56,7 +56,7 @@ def account():
 @app.route("/read")
 def read():
     Result = ""     
-    collection_ref = db.collection("靜宜資管")    
+    collection_ref = db.collection("電影")    
     docs = collection_ref.order_by("mail", direction=firestore.Query.DESCENDING).get()    
     for doc in docs:         
         Result += "文件內容：{}".format(doc.to_dict()) + "<br>"    
